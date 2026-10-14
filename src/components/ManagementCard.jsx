@@ -25,10 +25,11 @@ export default function ManagementCard() {
         </a>
       </div>
 
-      {/* Đồng hồ đỏ — tràn nhẹ ra mép phải rồi tan dần, không bị cắt cứng.
-          Mask đặt trên chính SVG vì class .reveal của thẻ Reveal đang chiếm quyền `transform`. */}
-      <Reveal delay={120} className="pointer-events-none absolute inset-0">
-        <Clock className="mask-fade-right absolute -right-6 top-1/2 h-52 w-52 -translate-y-1/2 sm:-right-8 sm:h-60 sm:w-60" />
+      {/* Đồng hồ đỏ — tan dần theo hình tròn, không có mép cắt thẳng nào.
+          Canh bằng flex thay vì `top-1/2 + translate`: class .reveal của thẻ
+          Reveal ghi đè `transform`, làm lệch vị trí tới 28px. */}
+      <Reveal fade delay={120} className="pointer-events-none absolute inset-0 flex items-center justify-end">
+        <Clock className="mask-soft-fade -mr-10 h-56 w-56 shrink-0 sm:-mr-14 sm:h-64 sm:w-64" />
       </Reveal>
 
       {/* 3 số liệu dưới đáy */}

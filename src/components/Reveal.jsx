@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 /** Hiệu ứng xuất hiện mờ dần khi cuộn tới phần tử. */
-export default function Reveal({ children, delay = 0, className = '', as: Tag = 'div' }) {
+export default function Reveal({ children, delay = 0, className = '', as: Tag = 'div', fade = false }) {
   const ref = useRef(null)
   const [visible, setVisible] = useState(false)
 
@@ -48,7 +48,7 @@ export default function Reveal({ children, delay = 0, className = '', as: Tag = 
     <Tag
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`reveal ${visible ? 'reveal-in' : ''} ${className}`}
+      className={`reveal ${fade ? 'reveal-fade' : ''} ${visible ? 'reveal-in' : ''} ${className}`}
     >
       {children}
     </Tag>

@@ -95,17 +95,19 @@
   mask-image: linear-gradient(to right, #000 58%, transparent 94%);
 }
 
-/* Hòa ảnh vào nền: bo tròn bằng mask thay vì khung box,
-   ảnh tan dần ở cả 4 cạnh nên không còn đường cắt thẳng nào. */
-.blend-soft {
-  -webkit-mask-image: radial-gradient(112% 100% at 50% 46%, #000 54%, rgba(0, 0, 0, 0.35) 80%, transparent 97%);
-  mask-image: radial-gradient(112% 100% at 50% 46%, #000 54%, rgba(0, 0, 0, 0.35) 80%, transparent 97%);
+/* Mờ dần theo hình tròn quanh tâm đồng hồ.
+   Nhờ vậy mọi mép đều tan mềm — không còn đường cắt thẳng nào,
+   kể cả khi thẻ bị bóp nhỏ ở màn hình hẹp. */
+.mask-soft-fade {
+  -webkit-mask-image: radial-gradient(118% 118% at 34% 50%, #000 38%, rgba(0, 0, 0, 0.6) 60%, transparent 84%);
+  mask-image: radial-gradient(118% 118% at 34% 50%, #000 38%, rgba(0, 0, 0, 0.6) 60%, transparent 84%);
 }
 
-/* Bản nhẹ hơn cho ảnh nhỏ trong danh sách */
-.blend-gentle {
-  -webkit-mask-image: radial-gradient(104% 100% at 50% 50%, #000 68%, transparent 96%);
-  mask-image: radial-gradient(104% 100% at 50% 50%, #000 68%, transparent 96%);
+/* Ảnh kiến trúc nền trắng: cắt trên/dưới bằng mask cho mềm
+   thay vì object-cover cắt cứng mất đỉnh tháp. */
+.mask-fade-vertical {
+  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
 }
 
 /* Phản chiếu gương */
@@ -131,6 +133,13 @@
 
 .reveal-in {
   opacity: 1;
+  transform: none;
+}
+
+/* Chế độ chỉ mờ dần — dành cho phần tử đang dùng transform/translate
+   để định vị (absolute + top-1/2, -translate-y-1/2...). Nếu không có
+   biến thể này, translateY(28px) của .reveal sẽ đẩy lệch vị trí. */
+.reveal-fade {
   transform: none;
 }
 

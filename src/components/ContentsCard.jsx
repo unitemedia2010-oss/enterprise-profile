@@ -39,13 +39,14 @@ export default function ContentsCard() {
           </span>
         </div>
 
-        {/* Ảnh dải kiến trúc bên phải */}
+        {/* Ảnh dải kiến trúc bên phải — dùng contain để không cắt mất đỉnh tháp */}
         <Reveal className="min-w-0 flex-1">
           <SmartImage
             src={contents.image}
             alt="Dự án tiêu biểu"
-            className="blend-soft relative h-44 sm:h-60"
-            imgClassName="object-cover"
+            contain
+            className="relative h-44 rounded-2xl bg-gradient-to-b from-shell-50 via-white to-shell-100 sm:h-56"
+            imgClassName="p-3"
           />
         </Reveal>
       </div>
