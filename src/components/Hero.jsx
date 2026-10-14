@@ -148,7 +148,7 @@ export default function Hero() {
             {/* Lớp phản chiếu mờ phía dưới */}
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 overflow-hidden opacity-45">
               <div className="absolute inset-x-0 bottom-0 h-[560px] w-full origin-bottom scale-y-[-1]">
-                <SmartImage src={hero.image} alt="" className="h-full w-full" imgClassName="object-cover" />
+                <SmartImage src={hero.image} alt="" className="relative h-full w-full" imgClassName="object-cover" />
               </div>
             </div>
 

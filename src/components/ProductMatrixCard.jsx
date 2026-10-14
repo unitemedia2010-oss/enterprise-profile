@@ -14,7 +14,7 @@ export default function ProductMatrixCard() {
           src={matrix.image}
           alt="Ma trận sản phẩm"
           contain
-          className="h-40 w-full rounded-2xl bg-gradient-to-b from-shell-50 to-white sm:h-48"
+          className="relative h-40 w-full rounded-2xl bg-gradient-to-b from-shell-50 to-white sm:h-48"
           imgClassName="p-2"
         />
       </Reveal>

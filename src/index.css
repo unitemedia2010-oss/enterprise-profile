@@ -89,6 +89,12 @@
   mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
 }
 
+/* Tan dần sang mép phải — dùng cho đồng hồ tràn ra ngoài thẻ */
+.mask-fade-right {
+  -webkit-mask-image: linear-gradient(to right, #000 58%, transparent 94%);
+  mask-image: linear-gradient(to right, #000 58%, transparent 94%);
+}
+
 /* Phản chiếu gương */
 .reflect {
   transform: scaleY(-1);

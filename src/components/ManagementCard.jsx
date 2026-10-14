@@ -25,9 +25,10 @@ export default function ManagementCard() {
         </a>
       </div>
 
-      {/* Đồng hồ đỏ */}
-      <Reveal delay={120} className="pointer-events-none absolute -right-14 top-1/2 -translate-y-1/2">
-        <Clock className="h-48 w-48 opacity-95 sm:h-56 sm:w-56" />
+      {/* Đồng hồ đỏ — tràn nhẹ ra mép phải rồi tan dần, không bị cắt cứng.
+          Mask đặt trên chính SVG vì class .reveal của thẻ Reveal đang chiếm quyền `transform`. */}
+      <Reveal delay={120} className="pointer-events-none absolute inset-0">
+        <Clock className="mask-fade-right absolute -right-6 top-1/2 h-52 w-52 -translate-y-1/2 sm:-right-8 sm:h-60 sm:w-60" />
       </Reveal>
 
       {/* 3 số liệu dưới đáy */}
