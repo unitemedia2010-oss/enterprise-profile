@@ -44,7 +44,7 @@ export default function ContentsCard() {
           <SmartImage
             src={contents.image}
             alt="Dự án tiêu biểu"
-            className="relative h-40 rounded-2xl sm:h-52"
+            className="blend-soft relative h-44 sm:h-60"
             imgClassName="object-cover"
           />
         </Reveal>

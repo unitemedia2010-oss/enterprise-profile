@@ -22,3 +22,6 @@ Thumbs.db
 # Cache
 .vite/
 .cache/
+
+# Repo khác được clone về để tham khảo - KHÔNG đưa vào repo này
+JD_UNITEGROUP/

@@ -19,7 +19,7 @@ export default function InnovationCard() {
               <SmartImage
                 src={item.image}
                 alt={item.zh}
-                className="relative h-16 w-20 shrink-0 rounded-xl"
+                className="blend-gentle relative h-16 w-20 shrink-0"
                 imgClassName="transition-transform duration-500 group-hover:scale-110"
               />
 
